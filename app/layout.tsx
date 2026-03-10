@@ -20,6 +20,9 @@ export const metadata = {
     follow: true,
     index: true,
   },
+  verification: {
+    google: "zfNrVCAynhvguEzF5cxjtQkMqC850wKVaep_yfmQsuU",
+  },
 };
 
 export default async function RootLayout({
@@ -27,11 +30,10 @@ export default async function RootLayout({
 }: {
   children: ReactNode;
 }) {
-  // Don't await the fetch, pass the Promise to the context provider
   const cart = getCart();
 
   return (
-    <html lang="pt_br" className={GeistSans.variable}>
+    <html lang="pt-BR" className={GeistSans.variable}>
       <body className="bg-neutral-50 text-black selection:bg-teal-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
         <CartProvider cartPromise={cart}>
           <Navbar />
